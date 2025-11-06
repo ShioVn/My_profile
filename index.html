@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
+
 </head>
 
 <style>
@@ -50,14 +51,27 @@
 <script>
     const TABS = ['home','social','contact'];
 
+    function resetAnimation(tabnem)
+    {
+        const tmp = document.getElementById(tabnem);
+        tmp.classList.remove("focus-in-contract");
+        void tmp.offsetWidth;
+        tmp.classList.add("focus-in-contract");
+    }
+
     function showTab(tabName) {
     document.querySelectorAll('section.tab').forEach(sec => {
         sec.classList.remove('active');
     });
-
     const tab = document.getElementById(tabName);
+
     if (tab) {
         tab.classList.add('active');
+
+        if(tabName==='home') resetAnimation('textHome');
+        if(tabName==='social') resetAnimation('textMedia');
+        if(tabName==='contact') resetAnimation('textContact');
+
     } else {
         console.warn("Không tìm thấy section có id:", tabName);
     }
@@ -177,7 +191,7 @@ color: #cbcbcb ;">
 
             <img src ="data/img/ever9.gif" style="width: 100px;margin-right: 400px ;">
 
-            <h1 style="margin:0; font-size:40px;font-weight: bold;">Home</h1>
+            <h1 style="margin:0; font-size:40px;font-weight: bold;" id="textHome" class = "focus-in-contract">Home</h1>
 
             <img src ="data/img/ever9.gif" style="width: 100px;margin-left: 400px ;">
 
@@ -222,11 +236,11 @@ color: #cbcbcb ;">
             
              <div style="display: flex; justify-content: center; align-items: center;">
 
-                <img src ="data/img/miyabi.gif" style="width: 100px;margin-right: 400px ;">
+                <img src ="data/img/miyabi.gif" style="width: 100px;margin-right: 300px ;">
 
-                <h1 style="margin:0; font-size:40px;font-weight: bold;">Social Media</h1>
+                <h1 style="margin:0; font-size:40px;font-weight: bold;" id="textMedia" class = "focus-in-contract">Social Media</h1>
 
-                <img src ="data/img/miyabi.gif" style="width: 100px;margin-left: 400px ;">
+                <img src ="data/img/miyabi.gif" style="width: 100px;margin-left: 300px ;">
 
              </div>
 
@@ -275,11 +289,11 @@ color: #cbcbcb ;">
 
             <div style="display: flex; justify-content: center; align-items: center;">
 
-                <img src ="data/img/jane.gif" style="width: 100px;margin-right: 400px ;">
+                <img src ="data/img/jane.gif" style="width: 100px;margin-right: 300px ;">
 
-                <h1 style="margin:0; font-size:40px;font-weight: bold;">Contact Me At:</h1>
+                <h1 style="margin:0; font-size:40px;font-weight: bold;" id="textContact" class = "focus-in-contract">Contact Me At:</h1>
 
-                <img src ="data/img/jane.gif" style="width: 100px;margin-left: 400px ;">
+                <img src ="data/img/jane.gif" style="width: 100px;margin-left: 300px ;">
 
              </div>
 
