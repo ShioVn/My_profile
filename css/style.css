@@ -1,0 +1,353 @@
+.container { 
+    max-width: 1200px; 
+}
+
+.disc-select-option {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+
+.disc-select-option img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+#discInfoSection {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    background-color: #1f2937;
+    border-radius: 0.5rem;
+    border: 1px solid #374151;
+}
+
+#discInfoSection img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+/* scrollbar dark theme */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+.custom-dropdown {
+  position: relative;
+  width: 200px; /* Adjust as needed */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.custom-dropdown > div {
+  display: none; /* Hide options by default */
+}
+
+.custom-dropdown:hover > div {
+  display: block; /* Show options on hover */
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  border: 1px solid #ccc;
+  z-index: 10;
+}
+
+.custom-dropdown > div:first-child {
+  display: flex; /* Always show the selected/default option */
+  padding: 8px;
+}
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #cf9052e6;
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+  z-index: 1000;
+}
+
+.top-bar button {
+  padding: 10px 30px;
+  border: none;
+  color: white;
+  background: #2563eb;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.top-bar button:first-child {
+  border-radius: 6px 0 0 6px;
+  background: #1e3a8a;
+}
+
+.top-bar button:last-child {
+  border-radius: 0 6px 6px 0;
+  background: #3b82f6;
+}
+
+.top-bar button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+section.tab {
+  position: absolute;
+  top: 100px; /* điều chỉnh theo menu */
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+section.tab.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+
+.chu
+    {
+        display: inline-block; 
+        vertical-align: middle; 
+        line-height: normal;
+        margin-left: 30px; 
+        font-size: 24px;
+        font-family: 'Poppins', sans-serif;
+    }
+    .card {
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    background: #fff;
+    padding: 16px;
+    }
+    .round {  border-radius: 8px;  }
+
+    body{
+        background: url('data/img/bg.jpg') no-repeat center center fixed; 
+        background-size: cover;
+    }
+    body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    }
+
+.scroll-section .roll-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  margin-bottom: 1rem;
+}
+
+.scroll-section .roll-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hover-light {
+  position: relative;
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 12px;
+  transition: box-shadow 0.2s ease;
+}
+
+.hover-light {
+  position: relative;
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  color: white;
+  transition: box-shadow 0.2s ease;
+}
+
+/* Tạo một "spotlight" thật sự theo mouse */
+.hover-light::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 300px; height: 300px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 80%);
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s, opacity 0.2s;
+  opacity: 0;
+}
+
+.hover-light::before {
+  top: var(--my, 0);
+  left: var(--mx, 0);
+  opacity: var(--opacity, 0);
+}
+
+.social-btn {
+    background: #ffce9de6;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.social-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.social-btn img {
+    display: block;
+}
+
+/* Hamburger icon */
+#hamburger {
+    position: fixed;
+    top: 0px;
+    left: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    z-index: 1001;
+    transition: transform 0.2s ease, color 0.2s ease;
+    color: white; /* hoặc màu bạn đang dùng */
+}
+
+#hamburger:hover {
+    transform: scale(1.2);
+    color: gold;
+}
+
+/* Slide menu nhạc */
+/* Music Menu */
+#musicMenu {
+    position: fixed;
+    top: 43px;
+    left: -300px; /* hidden offscreen */
+    width: 250px;
+    height: 1000px;
+    background-color: rgba(255, 200, 0, 0.9);
+    padding: 10px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+#musicMenu.active {
+    left: 0px; /* slides in */
+}
+
+#musicMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* lớp phủ mờ nền khi menu hiện */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);       
+    background: rgba(34, 34, 34, 0.6);   
+    opacity: 0;
+    pointer-events: none;             
+    transition: opacity 0.3s ease;
+    z-index: 999;                    
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;              
+}
+
+
+#musicMenu li {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    transition: background 0.2s;
+}
+
+#musicMenu li:hover {
+    background-color: rgba(255, 180, 0, 0.7);
+}
+
+/* Music Player */
+#musicPlayer {
+    position: fixed;
+    bottom: 20px;  /* cách đáy màn hình 20px */
+    right: 20px;   /* cách phải màn hình 20px */
+    width: 300px;  /* kích thước cố định */
+    height: 120px; /* chiều cao cố định */
+    padding: 10px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    z-index: 10000;
+    cursor: grab;  /* để dragable */
+    background-color: rgba(255, 180, 0, 0.65);
+}
+
+#fixedText {
+    position: fixed;      
+    bottom: 20px;        
+    right: 20px;         
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.6); 
+    z-index: 10000;       
+    pointer-events: none; 
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+#musicPlayer p {
+    margin: 0 0 8px 0;
+    font-weight: bold;
+    color: #222;
+}
+
+#musicPlayer input[type="range"] {
+    width: 100%;
+}
+
+.draggable {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    cursor: move;
+    z-index: 10000;
+    width: 300px;     
+    height: auto;    
+}
+
