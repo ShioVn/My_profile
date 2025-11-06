@@ -36,13 +36,6 @@ document.addEventListener('mouseup', () => {
     }
 });
 
-
-
-hamburger.addEventListener('click', () => {
-    musicMenu.classList.toggle('active'); 
-    overlay.classList.toggle('active');
-});
-
 overlay.onclick = () => {
     musicMenu.classList.remove('active');
     overlay.classList.remove('active');
@@ -100,6 +93,16 @@ const musicFiles = [
     'data/music/Transcendence.mp3',
 ];
 
+hamburger.addEventListener('click', () => {
+    musicMenu.classList.toggle('active'); 
+    overlay.classList.toggle('active');
+});
+
+function setActive(btn) {
+  document.querySelectorAll('.top-bar button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
 musicFiles.forEach(file => {
     const li = document.createElement('li');
     li.textContent = file.split('/').pop();
@@ -110,4 +113,28 @@ musicFiles.forEach(file => {
         playTrack(file);
     });
     musicList.appendChild(li);
+});
+
+let currentTrackIndex = 0;
+
+function playCurrentTrack() {
+    const file = musicFiles[currentTrackIndex];
+    playTrack(file);
+}
+
+function goNext() {
+    currentTrackIndex = (currentTrackIndex + 1) % musicFiles.length;
+    playCurrentTrack();
+}
+
+function goBack() {
+    currentTrackIndex = (currentTrackIndex - 1 + musicFiles.length) % musicFiles.length;
+    playCurrentTrack();
+}
+
+audioPlayer.addEventListener('ended', goNext);
+
+window.addEventListener('load', () => {
+    currentTrackIndex = 0;
+    playCurrentTrack();
 });
