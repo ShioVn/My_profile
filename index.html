@@ -71,6 +71,7 @@
         if(tabName==='home') resetAnimation('textHome');
         if(tabName==='social') resetAnimation('textMedia');
         if(tabName==='contact') resetAnimation('textContact');
+        if(tabName==='game') resetAnimation('textGame');
 
     } else {
         console.warn("Không tìm thấy section có id:", tabName);
@@ -178,6 +179,16 @@ color: #cbcbcb ;">
             cursor: pointer;
             border-radius: 0 6px 6px 0;
             " onclick="showTab('contact') ; setActive(this)"  class = "">Contact Me</button>
+
+            <button style="
+            padding: 10px 50px;
+            border: none;
+            background: #cf9052e6;
+            color: #f1f5f9;
+            cursor: pointer;
+            border-radius: 6px 0 0 6px;
+            " onclick="showTab('game') ; setActive(this)"  class ="">Game</button>
+
         </div>
 
 
@@ -280,7 +291,7 @@ color: #cbcbcb ;">
             </div>
 
             <div style="display: flex; justify-content: center; align-items: center;margin-top : 40px;">
-                <img src="data/img/mambo.gif" alt="mambo" style="max-width: 3000px;">
+                <img src="data/img/mambo.gif" alt="mambo" style="max-width: 3000px;border-radius: 20px;">
             </div>
 
         </section>
@@ -366,9 +377,50 @@ color: #cbcbcb ;">
 
         </section>
 
+         <section id="game" class="tab text-center" role="tabpanel" aria-hidden="true" style="margin-top: 40px;"> 
+            
+            <div style="display: flex; justify-content: center; align-items: center;">
+
+                <img src ="data/img/nokotan.gif" style="width: 100px;margin-right: 250px ;">
+
+                <h1 style="margin:0; font-size:40px;font-weight: bold;" id="textGame" class = "focus-in-contract">Guess the Number</h1>
+
+                <img src ="data/img/nokotan.gif" style="width: 100px;margin-left: 250px ;">
+
+             </div>
+
+             <p style = "font-size: 15px;" class = "font-style : italic">Đoán số từ 0 đến 100 :> , Chúc may mắn!!</p>
+
+             <h1>Guess the Number</h1>
+             <p>Enter a number from 1 to 100:</p>
+
+             <div style="display: flex;flex-direction: column;align-items: center;">
+                
+                <input type="number" id="guessInput" style="width: 120px; padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px; color: black;margin-top: 50px;">
+
+                <div style="display: inline-block;margin-top: 20px;">
+    
+                    <button id="guessBtn" class="game-btn">Guess</button>
+                    <button id="restartBtn" class="game-btn">Play Again</button>
+
+                </div>
+
+                <div id="message"></div>
+                <div id="attempts"></div>
+
+                <p id="message1" style="color:rgb(255, 255, 255); font-size:18px; margin-top:50px;" ></p>
+
+             </div>
+
+
+
+
+         </section>
+
 
         <script src = "js/musicplayer.js"></script>
         <script src = "js/top-bar.js"></script>
+         <script src="js/game.js"></script>
 
          
 
