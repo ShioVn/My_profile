@@ -50,7 +50,10 @@ function formatTime(seconds) {
 
 function playTrack(file) {
     audioPlayer.src = file;
-    audioPlayer.play();
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseIcon.src = "data/img/pause.png"; 
+    }
     currentTrackEl.textContent = file.split('/').pop();
 }
 
@@ -134,7 +137,10 @@ function goBack() {
 
 audioPlayer.addEventListener('ended', goNext);
 
-window.addEventListener('load', () => {
-    currentTrackIndex = 0;
-    playCurrentTrack();
-});
+
+window.addEventListener('click', () => {
+    if (audioPlayer.paused) {
+        playCurrentTrack();
+    }
+}, { once: true }); 
+

@@ -189,7 +189,7 @@ section.tab.active {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
-}
+};
 
 
 .chu
@@ -535,6 +535,189 @@ input[type="number"] {
 	-webkit-animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+
+.draggable {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    
+    pointer-events: auto !important;
+    cursor: move !important;
+    
+    z-index: 10000 !important;
+    
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+}
+
+
+#musicPlayer.draggable {
+    margin: 0 !important;
+}
+
+.card-toolbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  z-index: 1200;
+  position: relative;
+  z-index: 99999 !important; 
+  pointer-events: auto !important;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dropdown-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(207,144,82,0.9);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: .2px;
+   z-index: 100000 !important;
+  pointer-events: auto !important;
+}
+
+.dropdown-btn:after { margin-left: 8px; content: "▾"; font-size: 12px; }
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 180px;
+  background: rgba(255,255,255,0.98);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  overflow: hidden;
+  display: none;
+  z-index: 100001 !important;
+  pointer-events: auto !important;
+}
+
+.dropdown-menu.show { display: block; }
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+  background: rgba(0,0,0,0.06);
+}
+
+.card-section-content { display: none; }
+.card-section-content.active { display: block; }
+
+.towerOuter { width: 100%; display:flex; justify-content:center; }
+
+.dropdown-menu {
+  transform-origin: top right;
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 220ms cubic-bezier(.2,.9,.3,1), transform 220ms cubic-bezier(.2,.9,.3,1);
+  pointer-events: none; 
+}
+.dropdown-menu.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.dropdown-item {
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+.dropdown-menu.show .dropdown-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+.dropdown-menu.show .dropdown-item:nth-child(1){ transition-delay: 0ms; }
+.dropdown-menu.show .dropdown-item:nth-child(2){ transition-delay: 30ms; }
+.dropdown-menu.show .dropdown-item:nth-child(3){ transition-delay: 60ms; }
+
+
+.card-section-content {
+  opacity: 0;
+  transform: translateY(8px) scale(0.995);
+  transition: opacity 300ms ease, transform 300ms ease;
+  will-change: opacity, transform;
+  display: none;
+}
+
+.card-section-content.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.card-anim-in {
+  animation: cardIn 360ms cubic-bezier(.2,.9,.3,1) both;
+}
+.card-anim-out {
+  animation: cardOut 260ms cubic-bezier(.2,.9,.3,1) both;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(12px) scale(.995); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes cardOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(-8px) scale(.995); }
+}
+
+.dropdown-btn:focus { outline: 3px solid rgba(207,144,82,0.25); outline-offset: 3px; }
+
+.card-toolbar { position: relative; z-index: 100002; }
+.dropdown-btn { z-index: 100003; }
+.dropdown-menu { z-index: 100004; }
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  font-family: sans-serif;
+  text-align: center;
+  cursor: move;
+}
+
+canvas {
+  display: block;
+  margin: 0px auto 20px;
+}
+
+a {
+  color: #5ae;
+}
+a:hover {
+  color: #247;
+}
+
+
 
 
 

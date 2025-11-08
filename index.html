@@ -90,6 +90,8 @@
     const initial = (hash && document.getElementById(hash)) ? hash : 'home';
     showTab(initial);
     });
+
+
 </script>
 
 
@@ -121,12 +123,12 @@ color: #cbcbcb ;">
         <input type="range" id="seekBar" value="0" min="0" max="100" style="width: 100%;">
         
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 5px;">
-            <span id="currentTime">0:00</span>
+            <span id="currentTime" style="margin-left: 20px;">0:00</span>
             <button id="playPauseBtn" style="background: none; border: none; cursor: pointer;">
                 <img id="playPauseIcon" src = "data/img/continue.png" width="27px">
 
             </button>
-            <span id="duration">0:00</span>
+            <span id="duration" style="margin-right: 20px;" >0:00</span>
         </div >
             <div class="controls" >
             <img src="data/img/back.png" alt="Back" class="control-btn"  style="height: 28px; width: 28px; margin-top: -68px; margin-right: 30px;" onclick="goBack()">
@@ -188,6 +190,15 @@ color: #cbcbcb ;">
             cursor: pointer;
             border-radius: 6px 0 0 6px;
             " onclick="showTab('game') ; setActive(this)"  class ="">Game</button>
+
+            <button style="
+            padding: 10px 50px;
+            border: none;
+            background: #cf9052e6;
+            color: #f1f5f9;
+            cursor: pointer;
+            border-radius: 6px 0 0 6px;
+            " onclick="showTab('card') ; setActive(this)"  class ="">Card</button>
 
         </div>
 
@@ -259,7 +270,7 @@ color: #cbcbcb ;">
             <p style = "font-size: 15px;" class = "font-style : italic">Chào mừng — đây là Social Media. Nơi mình sẽ để link dẫn đến các trang Social Media của mình</p>
 
              <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
-
+z
 
                 <a href="https://www.facebook.com/uacaiqqjz/" target="_blank">
                     <button class="social-btn">
@@ -417,10 +428,109 @@ color: #cbcbcb ;">
 
          </section>
 
+            <section id="card" class="tab text-center" role="tabpanel" aria-hidden="true" style="margin-top: 10px;">
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <img src="data/img/furina.gif" style="width: 100px; margin-right: 250px;">
+                    <h1 style="margin:0; font-size:40px;font-weight: bold;" class="focus-in-contract">Model 3D simulator</h1>
+                    <img src="data/img/furina.gif" style="width: 100px; margin-left: 250px;">
+                </div>
+
+                <div class="card-toolbar">
+                    <div class="dropdown">
+                    <button type="button" class="dropdown-btn" aria-haspopup="true" aria-expanded="false">Chọn mục</button>
+                    <div class="dropdown-menu" role="menu" aria-label="Card menu">
+                        <button class="dropdown-item active" data-target="cardTower" role="menuitem" style="color: black;">Card Tower</button>
+                        <button class="dropdown-item" data-target="House" role="menuitem" style="color: black;">House</button>
+                    </div>
+                    </div>
+                </div>
+
+                <div id="cardTower" class="card-section-content active" style="margin-top: 200px;">
+
+                    <link rel="stylesheet" type="text/css" href="css/ntest.css">
+
+                    <input type="checkbox" id="wf" class="wireframe_input">
+                    <label for="wf" class="wireframe_label">Wireframe</label>
+
+                    <div class="hoverPad"></div>
+                    <div class="hoverPad"></div>
+                    <div class="hoverPad"></div>
+                    <div class="hoverPad"></div>
+                    <div class="hoverPad"></div>
+                    <div class="hoverPad"></div>
+                    <div class="hoverPad"></div>
+                    <div class="hoverPad"></div>
+                    <div class="hoverPad"></div>
+                    <div class="hoverPad"></div>
+
+                    <div class="towerOuter">
+                    <div class="tower">
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+                        <div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div><div class="card"></div>
+
+                        <div class="shadow"></div>
+                    </div>
+                    </div>
+                </div>
+
+                <div id="House" class="card-section-content" style="margin-top:0px">
+
+                    <div class="container">
+                        <canvas class="illo"></canvas>
+                        <p><a href="https://dribbble.com/shots/3611306-Happy-Town">Based on Original design by Alex Pasquarella</a></p>
+                        <p>Click &amp; drag to rotate</p>
+                        <p><button class="reset-button">Reset</button></p>
+                    </div>
+                    
+                </div>
+            </section>
+
+
 
         <script src = "js/musicplayer.js"></script>
         <script src = "js/top-bar.js"></script>
          <script src="js/game.js"></script>
+         <script src="js/dropdownmenu.js"></script>
+          <script src="https://unpkg.com/zdog@1/dist/zdog.dist.js"></script>
+
+          
+        <script src="js/House3d.js"></script>
 
          
 
